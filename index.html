@@ -3674,7 +3674,7 @@
       }
 
       .hero-visual {
-        display: flex
+        display: none
       }
 
       .footer-top {
@@ -3721,28 +3721,11 @@
         justify-content: center
       }
 
-      .h1 {
-        font-size: clamp(2.5rem, 8vw, 4.5rem);
-      }
-
       .hero-tagline {
-        text-align: center;
-        border-left: none;
-        padding-left: 0;
-        margin: 0 auto 30px;
+        text-align: left
       }
 
-      .hero-btns {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero-btns .btn {
-        width: 100%;
-        max-width: 320px;
-        justify-content: center;
-      }
-
+      .hero-btns,
       .hero-social-proof,
       .countdown {
         justify-content: center
@@ -5645,15 +5628,15 @@ RULES:
       const villageInput = $('village-input');
       const name = nameInput?.value.trim();
       const village = villageInput?.value.trim();
-      
+
       if (!name) { nameInput?.focus(); return; }
       if (!village) { villageInput?.focus(); return; }
-      
+
       Chat.userName = name;
       Chat.userVillage = village;
       localStorage.setItem('chat_user_name', name);
       localStorage.setItem('chat_user_village', village);
-      
+
       Chat.hideNamePanel();
       Chat.addUserBubble(`${name}, ${village}`);
       setTimeout(initChatSession, 400);
